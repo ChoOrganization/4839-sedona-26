@@ -30,6 +30,7 @@ jobs:
             git rm -rf .
           fi
           rm -rf ${{ github.event.number }}
+          unzip build.zip -d build
           mv build ${{ github.event.number }}
           git add ${{ github.event.number }}
           if git commit -m "✔️ Сборка #${{ github.event.number }}"
